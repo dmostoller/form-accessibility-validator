@@ -71,9 +71,9 @@ Access through extension options:
 
 ## Support
 
-- [Open an Issue](https://github.com/username/form-accessibility-validator/issues)
-- Email: support@formaccessibilityvalidator.com
-- [FAQ Documentation](https://formaccessibilityvalidator.com/docs/faq)
+- [Open an Issue](https://github.com/username/form-accessibility-validator-extension/issues)
+- Email: formaccessibilityvalidator@gmail.com
+- [FAQ Documentation](https://fav-website.vercel.app/docs/faq)
 
 ## Contributing
 
@@ -90,8 +90,8 @@ MIT License - See [LICENSE](LICENSE) for details
 
 ## Legal
 
-- [Privacy Policy](https://formaccessibilityvalidator.com/privacy)
-- [Terms of Service](https://formaccessibilityvalidator.com/terms)
+- [Privacy Policy](https://fav-website.vercel.app/privacy)
+- [Terms of Service](https://fav-website.vercel.app/terms)
 
 ## Authors
 
