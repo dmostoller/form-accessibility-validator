@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme */
+    --background: theme("colors.white");
+    --text: theme("colors.masala.950");
+    --surface: theme("colors.gray.100");
+    --border: theme("colors.masala.200");
+    --primary: theme("colors.masala.600");
+    --primary-hover: theme("colors.masala.700");
+    --error: theme("colors.red.500");
+    --error-bg: theme("colors.red.50");
+    --error-border: theme("colors.red.200");
+    --error-text: theme("colors.red.700");
+    --error-hover: theme("colors.red.800");
+    --warning: theme("colors.amber.500");
+    --success: theme("colors.green.500");
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: theme("colors.masala.950");
+      --text: theme("colors.masala.50");
+      --surface: theme("colors.masala.900");
+      --border: theme("colors.masala.800");
+      --primary: theme("colors.masala.400");
+      --primary-hover: theme("colors.masala.300");
+      --error: theme("colors.red.400");
+      --error-bg: theme("colors.red.950/0.2");
+      --error-border: theme("colors.red.500/0.5");
+      --error-text: theme("colors.red.200");
+      --error-hover: theme("colors.red.100");
+      --warning: theme("colors.amber.400");
+      --success: theme("colors.green.400");
+    }
+  }
+
+  body {
+    @apply bg-[var(--background)] text-[var(--text)];
+  }
+}
+
+@layer components {
+  .accessibility-highlight {
+    @apply relative outline-2 outline-dashed outline-[var(--error)];
+  }
+
+  .accessibility-tooltip {
+    @apply absolute bottom-full left-0 
+           bg-[var(--surface)] text-[var(--text)]
+           border border-[var(--border)]
+           p-2 rounded text-sm z-tooltip pointer-events-none 
+           whitespace-nowrap;
+  }
+
+  .contrast-issue {
+    @apply outline-[var(--warning)];
+  }
+
+  .focus-issue {
+    @apply outline-[var(--success)];
+  }
+}
+
+@layer components {
+  select {
+    @apply bg-[var(--surface)] text-[var(--text)] border border-[var(--border)] px-2 py-1 rounded-sm;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+  }
+
+  select:focus {
+    @apply outline-none ring-2 ring-[var(--primary)];
+  }
+
+  select option {
+    @apply bg-[var(--surface)] text-[var(--text)];
+  }
+
+  @media (prefers-color-scheme: dark) {
+    select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23d1d5db' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    }
+  }
+}
